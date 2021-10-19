@@ -55,7 +55,7 @@ source /Users/harshboricha/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias hello='echo "hello world i am updated"'
 alias update="source ~/.zshrc"
-
+alias clearnpm = "rm -rf node_modules package-lock.json"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
