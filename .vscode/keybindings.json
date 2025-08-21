@@ -1,0 +1,15 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "cmd+i",
+        "command": "composerMode.agent"
+    },
+    {
+        "key": "cmd+h",
+        "command": "workbench.action.previousEditor",
+    },
+    {
+        "key": "cmd+l",
+        "command": "workbench.action.nextEditor",
+    }
+]
