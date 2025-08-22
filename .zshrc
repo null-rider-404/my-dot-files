@@ -69,7 +69,9 @@ alias nrp="npm run prisma:studio"
 # macOS aliases
 alias port="lsof -i"
 alias stop="kill -9"
-
+portz() {
+  lsof -i :$1
+}
 
 # =========================================================================
 # Node Version Manager (NVM)
