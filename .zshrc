@@ -1,132 +1,79 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# =========================================================================
+# Oh My Zsh
+# =========================================================================
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/harshboricha/.oh-my-zsh"
+export ZSH="/Users/harsh.boricha/.oh-my-zsh"
+
+# Set name of the theme to load.
+# Set a different theme to override the Oh My Zsh default.
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable auto-update (or set an initial update time to start with).
+# DISABLE_AUTO_UPDATE="true"
+
+# You can add more options here if needed, but these are the common ones.
+
+# This is where your plugins are loaded.
 plugins=(
-git
-bundler
-dotenv
-npm
-brew
-history
-extract
-sudo
-yarn
-web-search
-zsh-autosuggestions
-last-working-dir
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    you-should-use
+    zsh-z
 )
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
-source /Users/harshboricha/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /Users/harshboricha/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
+# =========================================================================
+# Powerlevel10k Configuration
+# =========================================================================
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# =========================================================================
+# Environment Variables & Configuration
+# =========================================================================
+# Zsh Configuration
+export YSU_MESSAGE_POSITION="after"
 
-alias hello='echo "hello world i am updated"'
-alias update="source ~/.zshrc"
-alias clearnpm="rm -rf node_modules package-lock.json"
-alias setpackagelink="cd ./node_modules/react && npm link && cd ../../"
-alias getpackagelink="npm link react"
 
+# =========================================================================
+# Aliases
+# =========================================================================
+# Zsh aliases
+alias openzs="open ~/.zshrc"
+alias sourcezs="source ~/.zshrc"
+
+# npm aliases
+alias nrd="npm run dev"
+alias nrb="npm run build"
+alias ni="npm install"
+alias nu="npm uninstall"
+alias nr="npm run"
+alias nrp="npm run prisma:studio"
+
+# macOS aliases
+alias port="lsof -i"
+alias stop="kill -9"
+
+
+# =========================================================================
+# Node Version Manager (NVM)
+# =========================================================================
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
-
-export PATH="$PATH:/usr/local/opt/mongodb-community@5.0/bin"
-
-# If you come from bash you might have to change your $PATH. export 
-# PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/harshboricha/.oh-my-zsh" ZSH_THEME="powerlevel10k/powerlevel10k"
-
-plugins=( git bundler dotenv npm brew history extract sudo yarn web-search zsh-autosuggestions 
-last-working-dir )
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim' else export EDITOR='mvim' fi
-
-# Compilation flags export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs, plugins, and themes. Aliases 
-# can be placed here, though oh-my-zsh users are encouraged to define aliases within the ZSH_CUSTOM 
-# folder. For a full list of active aliases, run `alias`.
-#
-# Example aliases alias zshconfig="mate ~/.zshrc" alias ohmyzsh="mate ~/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh 
-source /Users/harshboricha/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /Users/harshboricha/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-alias update="source ~/.zshrc" 
-alias clearnpm="rm -rf node_modules package-lock.json" 
-alias setpackagelink="cd ./node_modules/react && npm link && cd 
-../../" 
-alias getpackagelink="npm link react"
-alias dev="npm run dev"
-
-# export NVM_DIR="$HOME/.nvm" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-export PATH="$PATH:/usr/local/opt/mongodb-community@5.0/bin"
-
-
-# place this after nvm initialization!
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
