@@ -1,3 +1,6 @@
+JUST GO THROUGH THIS ONCE FOR TERMINAL SETUP: 
+https://dev.to/gabriel_perez_337aabb5cfd/supercharge-your-mac-terminal-a-step-by-step-guide-to-iterm2-oh-my-zsh-powerlevel10k-41am
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
